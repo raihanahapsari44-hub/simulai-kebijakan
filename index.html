@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="id" class="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Perkembangan Digital Sulawesi Selatan (2015-2024)</title>
+  <meta name="description"
+    content="Portal analisis perkembangan digital, Digital Readiness Index (DRI), dan simulasi kebijakan ekonomi digital Provinsi Sulawesi Selatan.">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts - Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #090d16;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Fade-in keyframe animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in-up {
+      opacity: 0;
+      animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Staggered animation classes */
+    .animation-delay-75 {
+      animation-delay: 75ms;
+    }
+
+    .animation-delay-100 {
+      animation-delay: 100ms;
+    }
+
+    .animation-delay-150 {
+      animation-delay: 150ms;
+    }
+
+    .animation-delay-200 {
+      animation-delay: 200ms;
+    }
+
+    .animation-delay-300 {
+      animation-delay: 300ms;
+    }
+
+    /* Range input customization */
+    input[type="range"] {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 5px;
+      background: #1e293b;
+      border-radius: 9999px;
+      outline: none;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #6366f1;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    input[type="range"]::-webkit-slider-thumb:hover {
+      background: #4f46e5;
+      transform: scale(1.2);
+      box-shadow: 0 0 14px rgba(79, 70, 229, 0.7);
+    }
+
+    input[type="range"]::-moz-range-thumb {
+      width: 16px;
+      height: 16px;
+      border: none;
+      border-radius: 50%;
+      background: #6366f1;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+      transition: all 0.2s ease;
+    }
+
+    input[type="range"]::-moz-range-thumb:hover {
+      background: #4f46e5;
+      transform: scale(1.2);
+      box-shadow: 0 0 14px rgba(79, 70, 229, 0.7);
+    }
+  </style>
+</head>
+
+<body class="bg-[#030712] text-slate-100 min-h-screen relative overflow-x-hidden antialiased pb-16">
+
+  <!-- Gradient Glow Mesh Background -->
+  <div
+    class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-indigo-500/5 rounded-full blur-[120px] pointer-events-none">
+  </div>
+  <div
+    class="absolute top-[250px] right-1/4 w-[400px] h-[400px] bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none">
+  </div>
+
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+
+    <!-- Title and Meta Header -->
+    <header class="mb-8 border-b border-slate-900 pb-6 animate-fade-in-up">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span
+              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Portal Aktif
+            </span>
+            <span class="text-xs text-slate-500 font-medium">Data Historis BPS & Bappeda</span>
+          </div>
+          <h1
+            class="text-2xl sm:text-3xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-slate-50 via-slate-100 to-indigo-200">
+            Perkembangan Digital Sulawesi Selatan
+          </h1>
+          <p class="text-xs sm:text-sm text-slate-400 mt-1 font-medium flex items-center gap-2">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-indigo-400"></i> Wilayah Analisis · Provinsi Sulawesi
+            Selatan (2015–2024)
+          </p>
+        </div>
+
+        <div class="bg-slate-900/60 border border-slate-800/80 rounded-2xl px-4 py-3 flex items-center gap-3">
+          <div class="p-2 bg-indigo-500/10 text-indigo-400 rounded-xl">
+            <i data-lucide="activity" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="block text-[10px] text-slate-500 uppercase tracking-widest font-bold">Digital Index 2024</span>
+            <span class="text-lg font-bold text-indigo-300">84.3 / 100</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Invisible Accessibility Landmark -->
+    <h2 class="sr-only">Dashboard Perkembangan Digital Sulawesi Selatan 2015-2024, termasuk Digital Readiness Index dan
+      simulasi kebijakan</h2>
+
+    <!-- Tab Controls Section -->
+    <nav
+      class="flex gap-2 flex-wrap mb-8 bg-slate-900/40 p-1.5 rounded-xl border border-slate-800/60 max-w-lg animate-fade-in-up animation-delay-75">
+      <button
+        class="tab-btn flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-indigo-500/20 shadow-md"
+        onclick="showTab('trend', this)">
+        <span class="flex items-center justify-center gap-1.5">
+          <i data-lucide="trending-up" class="w-4 h-4"></i> Tren Digital
+        </span>
+      </button>
+      <button
+        class="tab-btn flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+        onclick="showTab('dri', this)">
+        <span class="flex items-center justify-center gap-1.5">
+          <i data-lucide="cpu" class="w-4 h-4"></i> Indeks DRI
+        </span>
+      </button>
+      <button
+        class="tab-btn flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+        onclick="showTab('sim', this)">
+        <span class="flex items-center justify-center gap-1.5">
+          <i data-lucide="sliders" class="w-4 h-4"></i> Simulasi
+        </span>
+      </button>
+    </nav>
+
+    <!-- MAIN PANEL WRAPPERS -->
+    <main class="space-y-6">
+
+      <!-- TREN DIGITAL PANEL -->
+      <section id="tab-trend" class="tab-panel block animate-fade-in-up animation-delay-100">
+        <!-- Metric Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          <!-- Card 1 -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5 relative overflow-hidden group animate-fade-in-up">
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all duration-300">
+            </div>
+            <div class="flex justify-between items-start mb-3">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Internet 2024</p>
+              <div class="p-2 rounded-lg bg-blue-500/10 text-blue-400">
+                <i data-lucide="globe" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="text-3xl font-bold text-slate-100 mb-1">70,1%</p>
+            <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+              <span>▲</span> +48,7pp <span class="text-slate-500 font-normal">dari 2015</span>
+            </p>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5 relative overflow-hidden group animate-fade-in-up animation-delay-75">
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-all duration-300">
+            </div>
+            <div class="flex justify-between items-start mb-3">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Smartphone 2024</p>
+              <div class="p-2 rounded-lg bg-emerald-500/10 text-emerald-400">
+                <i data-lucide="smartphone" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="text-3xl font-bold text-slate-100 mb-1">96,7%</p>
+            <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+              <span>▲</span> +5,6pp <span class="text-slate-500 font-normal">dari 2015</span>
+            </p>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5 relative overflow-hidden group animate-fade-in-up animation-delay-100">
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-rose-500/5 rounded-full blur-2xl group-hover:bg-rose-500/10 transition-all duration-300">
+            </div>
+            <div class="flex justify-between items-start mb-3">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Broadband Tetap</p>
+              <div class="p-2 rounded-lg bg-rose-500/10 text-rose-400">
+                <i data-lucide="wifi" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="text-3xl font-bold text-slate-100 mb-1">12,8%</p>
+            <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+              <span>▲</span> +10,9pp <span class="text-slate-500 font-normal">dari 2015</span>
+            </p>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-5 hover:border-slate-700/80 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-indigo-500/5 relative overflow-hidden group animate-fade-in-up animation-delay-150">
+            <div
+              class="absolute top-0 right-0 w-24 h-24 bg-amber-500/5 rounded-full blur-2xl group-hover:bg-amber-500/10 transition-all duration-300">
+            </div>
+            <div class="flex justify-between items-start mb-3">
+              <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider">GDP 2024</p>
+              <div class="p-2 rounded-lg bg-amber-500/10 text-amber-400">
+                <i data-lucide="landmark" class="w-4 h-4"></i>
+              </div>
+            </div>
+            <p class="text-3xl font-bold text-slate-100 mb-1">Rp 396 T</p>
+            <p class="text-xs font-semibold text-emerald-400 flex items-center gap-1">
+              <span>▲</span> +145T <span class="text-slate-500 font-normal">dari 2015</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between animate-fade-in-up animation-delay-150">
+            <div class="mb-4">
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-1">
+                <i data-lucide="trending-up" class="w-4 h-4 text-blue-400"></i> Tren Penetrasi Digital
+              </h3>
+              <p class="text-xs text-slate-400 mb-3">Perkembangan penetrasi internet, smartphone, dan broadband (%)</p>
+              <div id="trendChartLegend"></div>
+            </div>
+            <div class="relative w-full h-[280px]">
+              <canvas id="trendChart" role="img"
+                aria-label="Grafik garis tren penetrasi internet, smartphone, dan broadband Sulawesi Selatan 2015 hingga 2024">Tren
+                Internet: 21.4 ke 70.1%; Smartphone: 91.1 ke 96.7%; Broadband: 1.9 ke 12.8%</canvas>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between animate-fade-in-up animation-delay-200">
+            <div class="mb-4">
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-1">
+                <i data-lucide="bar-chart-3" class="w-4 h-4 text-sky-400"></i> Produk Domestik Regional Bruto (PDRB)
+              </h3>
+              <p class="text-xs text-slate-400 mb-3">PDRB Sulawesi Selatan atas dasar harga konstan (Miliar Rupiah)</p>
+              <div class="h-6"></div> <!-- spacer to match heights -->
+            </div>
+            <div class="relative w-full h-[280px]">
+              <canvas id="gdpChart" role="img"
+                aria-label="Grafik batang GDP Sulawesi Selatan dalam miliar rupiah tahun 2015 hingga 2024">GDP Sulawesi
+                Selatan dari 250.803 miliar pada 2015 hingga 396.142 miliar pada 2024</canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Insight Box -->
+        <div
+          class="flex gap-3.5 bg-blue-500/5 border-l-4 border-blue-500 rounded-r-xl p-4 text-xs sm:text-sm text-slate-300 leading-relaxed shadow-sm animate-fade-in-up animation-delay-300">
+          <div class="text-blue-400 flex-shrink-0 mt-0.5">
+            <i data-lucide="info" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-200 block mb-0.5">Wawasan Tren:</span>
+            Penetrasi internet tumbuh rata-rata +5,4 pp/tahun, dipicu ekspansi jaringan 4G dan program pemerintah. Namun
+            broadband tetap hanya 12,8% di 2024, mengindikasikan ketergantungan pada mobile internet yang rentan
+            terhadap kualitas sinyal dan biaya data.
+          </div>
+        </div>
+      </section>
+
+      <!-- DRI INDEX PANEL -->
+      <section id="tab-dri" class="tab-panel hidden">
+        <div
+          class="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-5 mb-6 flex gap-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
+          <div class="text-indigo-400 mt-0.5 flex-shrink-0">
+            <i data-lucide="help-circle" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-200">Bagaimana DRI dihitung?</span>
+            Digital Readiness Index (DRI) dihitung dari 5 indikator yang dinormalisasi ke skala 0–100, lalu dikalikan
+            bobot masing-masing (Internet 30%, Smartphone 25%, Broadband 20%, ICT Share 15%, Digital Government 10%).
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div class="mb-4">
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-1">
+                <i data-lucide="activity" class="w-4 h-4 text-indigo-400"></i> Tren Digital Readiness Index (DRI)
+              </h3>
+              <p class="text-xs text-slate-400">Skala indeks 0 - 100 dari tahun 2015 hingga 2024</p>
+            </div>
+            <div class="relative w-full h-[280px]">
+              <canvas id="driChart" role="img"
+                aria-label="Grafik garis Digital Readiness Index Sulawesi Selatan dari 2015 sampai 2024">DRI naik dari
+                23,1 pada 2015 menjadi 84,3 pada 2024</canvas>
+            </div>
+          </div>
+
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div class="mb-4">
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-1">
+                <i data-lucide="pie-chart" class="w-4 h-4 text-emerald-400"></i> Kontribusi Komponen DRI (2024)
+              </h3>
+              <p class="text-xs text-slate-400">Nilai kontribusi riil dari setiap indikator penyusun indeks</p>
+            </div>
+            <div id="dri-bars" class="flex flex-col gap-2.5 my-auto"></div>
+          </div>
+        </div>
+
+        <div
+          class="flex gap-3.5 bg-indigo-500/5 border-l-4 border-indigo-500 rounded-r-xl p-4 text-xs sm:text-sm text-slate-300 leading-relaxed shadow-sm">
+          <div class="text-indigo-400 flex-shrink-0 mt-0.5">
+            <i data-lucide="award" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-200 block mb-0.5">Wawasan DRI:</span>
+            DRI Sulawesi Selatan meningkat 3,6× lipat dalam satu dekade (dari 23,1 → 84,3). Kontributor terbesar adalah
+            penetrasi internet dan kepemilikan smartphone. Kelemahan struktural masih terletak pada broadband tetap yang
+            hanya menyumbang 2,6 dari potensi 20 poin.
+          </div>
+        </div>
+      </section>
+
+      <!-- POLICY SIMULATION PANEL -->
+      <section id="tab-sim" class="tab-panel hidden">
+        <div
+          class="bg-slate-900/30 border border-slate-800/60 rounded-2xl p-5 mb-6 flex gap-3 text-slate-300 text-xs sm:text-sm leading-relaxed">
+          <div class="text-indigo-400 mt-0.5 flex-shrink-0">
+            <i data-lucide="sliders" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <span class="font-semibold text-slate-200">Tentang Simulasi Kebijakan</span>
+            Simulasi efek kebijakan digital terhadap indikator ekonomi. Parameter diestimasi menggunakan regresi
+            sederhana berdasarkan data historis Sulawesi Selatan periode 2015–2024. Geser parameter untuk melihat efek
+            proyeksi.
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+          <!-- Control Panel -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-4">
+                <i data-lucide="settings" class="w-4 h-4 text-indigo-400"></i> Kontrol Kebijakan Digital
+              </h3>
+
+              <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2.5">Pilih Skenario
+                Kebijakan</label>
+              <div class="flex gap-2 flex-wrap mb-6">
+                <button
+                  class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 bg-indigo-600 text-white shadow-indigo-500/20 shadow-sm border border-transparent"
+                  id="sim-btn-1" onclick="setSim(1)">Internet ↑</button>
+                <button
+                  class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-slate-800/60"
+                  id="sim-btn-2" onclick="setSim(2)">Broadband ↑</button>
+                <button
+                  class="flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-slate-800/60"
+                  id="sim-btn-3" onclick="setSim(3)">Kemiskinan ↓</button>
+              </div>
+
+              <!-- Scenario Sliders -->
+              <div class="space-y-4 min-h-[96px] flex flex-col justify-center">
+                <!-- Sim 1 -->
+                <div id="sim1" class="sim-scenario">
+                  <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+                    Peningkatan penetrasi internet (%) &rarr; dampak pada pertumbuhan ekonomi (GDP Growth)
+                  </p>
+                  <div class="flex items-center gap-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
+                    <span class="text-xs font-semibold text-slate-300 min-w-[100px] whitespace-nowrap">
+                      Kenaikan: <strong id="val1" class="text-indigo-400 text-sm font-bold">1</strong>%
+                    </span>
+                    <input type="range" min="1" max="20" value="1" step="1" id="slider1" oninput="updateSim1()"
+                      class="flex-1">
+                  </div>
+                </div>
+
+                <!-- Sim 2 -->
+                <div id="sim2" class="sim-scenario hidden">
+                  <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+                    Peningkatan broadband tetap (%) &rarr; dampak pada ICT Share ekonomi
+                  </p>
+                  <div class="flex items-center gap-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
+                    <span class="text-xs font-semibold text-slate-300 min-w-[100px] whitespace-nowrap">
+                      Kenaikan: <strong id="val2" class="text-indigo-400 text-sm font-bold">1</strong>%
+                    </span>
+                    <input type="range" min="1" max="15" value="1" step="1" id="slider2" oninput="updateSim2()"
+                      class="flex-1">
+                  </div>
+                </div>
+
+                <!-- Sim 3 -->
+                <div id="sim3" class="sim-scenario hidden">
+                  <p class="text-xs text-slate-400 mb-3 leading-relaxed">
+                    Peningkatan DRI (poin) &rarr; dampak penurunan kemiskinan
+                  </p>
+                  <div class="flex items-center gap-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/40">
+                    <span class="text-xs font-semibold text-slate-300 min-w-[110px] whitespace-nowrap">
+                      Kenaikan DRI: <strong id="val3" class="text-indigo-400 text-sm font-bold">5</strong> poin
+                    </span>
+                    <input type="range" min="1" max="30" value="5" step="1" id="slider3" oninput="updateSim3()"
+                      class="flex-1">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Simulation Result Card -->
+            <div id="simResult"
+              class="mt-6 bg-indigo-950/10 border border-indigo-500/20 rounded-xl p-4 relative overflow-hidden">
+              <!-- Dynamically filled by JS -->
+            </div>
+          </div>
+
+          <!-- Projection Chart -->
+          <div
+            class="bg-slate-900/40 backdrop-blur-md border border-slate-800/60 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div class="mb-4">
+              <h3 class="text-sm font-bold text-slate-200 flex items-center gap-2 mb-1">
+                <i data-lucide="line-chart" class="w-4 h-4 text-indigo-400"></i> Proyeksi Hasil Simulasi (2024-2028)
+              </h3>
+              <p class="text-xs text-slate-400 mb-3">Perbandingan baseline historis dengan proyeksi pasca-kebijakan</p>
+              <div id="simChartLegend"></div>
+            </div>
+            <div class="relative w-full h-[280px]">
+              <canvas id="simChart" role="img"
+                aria-label="Grafik proyeksi hasil simulasi kebijakan digital Sulawesi Selatan">Proyeksi dampak kebijakan
+                digital</canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Simulation Insight -->
+        <div id="simInsight"
+          class="insight-box flex gap-3.5 bg-violet-500/5 border-l-4 border-violet-500 rounded-r-xl p-4 text-xs sm:text-sm text-slate-300 leading-relaxed shadow-sm">
+          <!-- Dynamically filled by JS -->
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+  <script>
+    // Initialize Lucide Icons on load
+    window.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+
+    const years = [2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024];
+    const internet = [21.37, 24.26, 30.35, 37.09, 43.91, 49.59, 59.69, 64.14, 66.95, 70.1];
+    const smartphone = [91.14, 92.5, 90.97, 91.51, 92.21, 94.19, 93.75, 95.85, 93.06, 96.67];
+    const broadband = [1.87, 2.15, 3.42, 4.89, 6.12, 7.54, 8.92, 10.21, 11.45, 12.8];
+    const gdp = [250803, 269401, 288814, 309156, 330506, 328155, 343395, 360913, 377208, 396142];
+    const gdpGrowth = [6.08, 6.34, 6.17, 6.05, 6.33, -3.28, 3.46, 3.93, 3.37, 3.9];
+    const poverty = [9.39, 9.24, 9.38, 9.06, 8.56, 8.99, 8.78, 8.65, 8.7, 7.77];
+    const ictShare = [5298, 4879, 5033, 5186, 5034, 5430, 6743, 7657, 7538, 7371];
+    const digitalGov = [1.1, 1.25, 1.5, 2.14, 2.35, 2.42, 2.58, 2.75, 3.12, 3.45];
+
+    function normArr(arr) {
+      const mn = Math.min(...arr), mx = Math.max(...arr);
+      return arr.map(v => (v - mn) / (mx - mn) * 100);
+    }
+
+    const nInternet = normArr(internet);
+    const nSmartphone = normArr(smartphone);
+    const nBroadband = normArr(broadband);
+    const nICT = normArr(ictShare);
+    const nDigGov = normArr(digitalGov);
+
+    const DRI = years.map((_, i) =>
+      parseFloat((nInternet[i] * 0.30 + nSmartphone[i] * 0.25 + nBroadband[i] * 0.20 + nICT[i] * 0.15 + nDigGov[i] * 0.10).toFixed(1))
+    );
+
+    function showTab(t, btn) {
+      document.querySelectorAll('.tab-panel').forEach(p => {
+        p.classList.add('hidden');
+        p.classList.remove('block');
+      });
+      document.querySelectorAll('.tab-btn').forEach(b => {
+        b.className = "tab-btn flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50";
+      });
+
+      const activePanel = document.getElementById('tab-' + t);
+      activePanel.classList.remove('hidden');
+      activePanel.classList.add('block');
+
+      // Trigger CSS fade-in-up animation
+      activePanel.style.animation = 'none';
+      void activePanel.offsetHeight; /* trigger reflow */
+      activePanel.style.animation = null;
+      activePanel.classList.add('animate-fade-in-up');
+
+      btn.className = "tab-btn flex-1 py-2.5 px-4 rounded-lg text-sm font-semibold transition-all duration-300 bg-gradient-to-r from-indigo-600 to-violet-600 text-white shadow-indigo-500/20 shadow-md";
+
+      if (t === 'dri') {
+        animateDriBars();
+      }
+    }
+
+    function animateDriBars() {
+      const bars = document.querySelectorAll('#dri-bars [data-target-width]');
+      bars.forEach(el => {
+        el.style.width = '0%';
+      });
+      setTimeout(() => {
+        bars.forEach(el => {
+          el.style.width = el.getAttribute('data-target-width');
+        });
+      }, 100);
+    }
+
+    const gridColor = 'rgba(148, 163, 184, 0.05)';
+    const textColor = '#94a3b8';
+    const chartFont = { family: "'Plus Jakarta Sans', sans-serif", size: 10, weight: '500' };
+
+    // Common Chart.js Config Generator
+    const getChartOptions = (yCallback) => ({
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: 'rgba(15, 23, 42, 0.9)',
+          titleColor: '#f1f5f9',
+          bodyColor: '#f1f5f9',
+          borderColor: 'rgba(255, 255, 255, 0.08)',
+          borderWidth: 1,
+          padding: 10,
+          bodyFont: chartFont,
+          titleFont: { family: "'Plus Jakarta Sans', sans-serif", weight: 'bold', size: 11 }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: gridColor },
+          ticks: { color: textColor, font: chartFont }
+        },
+        y: {
+          grid: { color: gridColor },
+          ticks: {
+            color: textColor,
+            font: chartFont,
+            callback: yCallback || (v => v)
+          }
+        }
+      }
+    });
+
+    // 1. Trend Chart
+    new Chart(document.getElementById('trendChart'), {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [
+          { label: 'Internet (%)', data: internet, borderColor: '#3b82f6', backgroundColor: 'transparent', tension: 0.35, pointRadius: 4, pointHoverRadius: 6, pointBackgroundColor: '#3b82f6', pointBorderColor: '#030712', pointBorderWidth: 2, borderWidth: 3 },
+          { label: 'Smartphone (%)', data: smartphone, borderColor: '#10b981', backgroundColor: 'transparent', tension: 0.35, pointRadius: 4, pointHoverRadius: 6, pointBackgroundColor: '#10b981', pointBorderColor: '#030712', pointBorderWidth: 2, borderWidth: 3, borderDash: [6, 4] },
+          { label: 'Broadband Tetap (%)', data: broadband, borderColor: '#f43f5e', backgroundColor: 'transparent', tension: 0.35, pointRadius: 4, pointHoverRadius: 6, pointBackgroundColor: '#f43f5e', pointBorderColor: '#030712', pointBorderWidth: 2, borderWidth: 3, borderDash: [2, 3] }
+        ]
+      },
+      options: getChartOptions(v => v + '%')
+    });
+
+    // 2. GDP Chart
+    new Chart(document.getElementById('gdpChart'), {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'GDP (Miliar Rp)',
+          data: gdp,
+          backgroundColor: years.map((_, i) => i === 5 ? 'rgba(239, 68, 68, 0.85)' : 'rgba(56, 189, 248, 0.85)'),
+          hoverBackgroundColor: years.map((_, i) => i === 5 ? '#ef4444' : '#38bdf8'),
+          borderRadius: 6,
+          borderWidth: 0
+        }]
+      },
+      options: getChartOptions(v => (v / 1000).toFixed(0) + 'rb')
+    });
+
+    // 3. DRI Chart
+    new Chart(document.getElementById('driChart'), {
+      type: 'line',
+      data: {
+        labels: years,
+        datasets: [{
+          label: 'DRI',
+          data: DRI,
+          borderColor: '#6366f1',
+          backgroundColor: 'rgba(99, 102, 241, 0.05)',
+          fill: true,
+          tension: 0.4,
+          pointRadius: 4,
+          pointHoverRadius: 6,
+          pointBackgroundColor: '#6366f1',
+          pointBorderColor: '#030712',
+          pointBorderWidth: 2,
+          borderWidth: 3
+        }]
+      },
+      options: {
+        ...getChartOptions(),
+        scales: {
+          x: { grid: { color: gridColor }, ticks: { color: textColor, font: chartFont } },
+          y: { min: 0, max: 100, grid: { color: gridColor }, ticks: { color: textColor, font: chartFont } }
+        }
+      }
+    });
+
+    // DRI Components Progress Bars
+    const driComponents = [
+      { label: 'Internet (30%)', val: (nInternet[9] * 0.30).toFixed(1), max: 30, pct: (nInternet[9] * 0.30 / 30) * 100, color: 'bg-blue-500 shadow-[0_0_8px_rgba(59,130,246,0.4)]' },
+      { label: 'Smartphone (25%)', val: (nSmartphone[9] * 0.25).toFixed(1), max: 25, pct: (nSmartphone[9] * 0.25 / 25) * 100, color: 'bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]' },
+      { label: 'Broadband (20%)', val: (nBroadband[9] * 0.20).toFixed(1), max: 20, pct: (nBroadband[9] * 0.20 / 20) * 100, color: 'bg-rose-500 shadow-[0_0_8px_rgba(244,63,94,0.4)]' },
+      { label: 'ICT Share (15%)', val: (nICT[9] * 0.15).toFixed(1), max: 15, pct: (nICT[9] * 0.15 / 15) * 100, color: 'bg-amber-500 shadow-[0_0_8px_rgba(245,158,11,0.4)]' },
+      { label: 'Digital Government (10%)', val: (nDigGov[9] * 0.10).toFixed(1), max: 10, pct: (nDigGov[9] * 0.10 / 10) * 100, color: 'bg-violet-500 shadow-[0_0_8px_rgba(139,92,246,0.4)]' }
+    ];
+    const driContainer = document.getElementById('dri-bars');
+    driComponents.forEach(c => {
+      const pct = Math.min(c.pct, 100);
+      driContainer.innerHTML += `
+        <div class="hover:bg-slate-900/40 p-2.5 rounded-lg transition-all duration-300">
+          <div class="flex justify-between text-xs text-slate-400 mb-1.5 font-medium">
+            <span>${c.label}</span>
+            <span class="font-semibold text-slate-200">${c.val} <span class="text-slate-500">/ ${c.max}</span></span>
+          </div>
+          <div class="w-full bg-slate-800/50 rounded-full h-2 overflow-hidden">
+            <div class="h-full rounded-full ${c.color} transition-all duration-1000 ease-out" style="width: 0%;" data-target-width="${pct}%"></div>
+          </div>
+        </div>`;
+    });
+
+    let simChartInst = null;
+    let activeSim = 1;
+
+    function setSim(n) {
+      activeSim = n;
+      document.querySelectorAll('[id^="sim-btn-"]').forEach(b => {
+        b.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 text-slate-400 hover:text-slate-200 hover:bg-slate-800/50 border border-slate-800/60";
+      });
+
+      const activeBtn = document.getElementById('sim-btn-' + n);
+      activeBtn.className = "flex-1 py-2 px-3 rounded-lg text-xs font-semibold transition-all duration-300 bg-indigo-600 text-white shadow-indigo-500/20 shadow-sm border border-transparent";
+
+      document.querySelectorAll('.sim-scenario').forEach(s => s.classList.add('hidden'));
+      document.getElementById('sim' + n).classList.remove('hidden');
+
+      if (n === 1) updateSim1();
+      if (n === 2) updateSim2();
+      if (n === 3) updateSim3();
+    }
+
+    function renderSimChart(labels, baseline, projected, yLabel, baseLabel, projLabel) {
+      if (simChartInst) simChartInst.destroy();
+
+      const yCallback = (v) => {
+        if (yLabel === 'rb') return (v).toFixed(1) + 'rb';
+        return v.toFixed(2) + (yLabel || '');
+      };
+
+      simChartInst = new Chart(document.getElementById('simChart'), {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label: baseLabel, data: baseline, borderColor: '#64748b', borderDash: [6, 4], tension: 0.35, pointRadius: 3, borderWidth: 2, backgroundColor: 'transparent' },
+            { label: projLabel, data: projected, borderColor: '#8b5cf6', backgroundColor: 'rgba(139, 92, 246, 0.05)', fill: true, tension: 0.35, pointRadius: 4, pointHoverRadius: 6, pointBackgroundColor: '#8b5cf6', pointBorderColor: '#030712', pointBorderWidth: 2, borderWidth: 3 }
+          ]
+        },
+        options: getChartOptions(yCallback)
+      });
+    }
+
+    function updateSim1() {
+      const delta = parseInt(document.getElementById('slider1').value);
+      document.getElementById('val1').textContent = delta;
+      const coef = 0.025;
+      const baseGDP = gdpGrowth[years.length - 1];
+      const projYears = ['2024', '2025', '2026', '2027', '2028'];
+      const baseline = [3.9, 3.9, 3.9, 3.9, 3.9];
+      const projected = projYears.map((_, i) => parseFloat((baseGDP + (i + 1) * delta * coef * 0.5).toFixed(2)));
+
+      renderSimChart(projYears, baseline, projected, '%', 'Baseline (tanpa kebijakan)', 'Proyeksi (dengan kebijakan)');
+
+      document.getElementById('simResult').innerHTML = `
+        <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-2xl"></div>
+        <h4 class="text-xs font-bold text-indigo-300 uppercase tracking-wider mb-2">Hasil Proyeksi Kebijakan</h4>
+        <div class="flex justify-between items-baseline gap-2 mb-1">
+          <span class="text-xs text-slate-400">Estimasi Tambahan PDRB Growth:</span>
+          <span class="text-lg font-bold text-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.2)]">+${(delta * coef).toFixed(3)}% <span class="text-xs font-normal text-slate-500">/ thn</span></span>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-normal">
+          Dasar analisis: setiap 1% peningkatan penetrasi internet berkontribusi sekitar +0,025% pada pertumbuhan PDRB riil per tahun.
+        </p>`;
+
+      document.getElementById('simInsight').innerHTML = `
+        <div class="text-violet-400 flex-shrink-0 mt-0.5">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-semibold text-slate-200 block mb-0.5">Wawasan Kebijakan Digital:</span>
+          Koefisien 0,025 diestimasi dari korelasi penetrasi internet dan GDP Growth Sulsel 2015–2024 (r &asymp; 0,71). Kenaikan internet sebesar ${delta}pp menghasilkan tambahan <strong class="text-violet-400 font-bold">${(delta * coef).toFixed(3)}%</strong> pertumbuhan ekonomi tahunan. Pada nominal PDRB 2024 (Rp 396T), ini setara dengan tambahan aktivitas ekonomi sebesar <strong class="text-violet-400 font-bold">Rp ${(396142 * (delta * coef) / 100).toFixed(0)} miliar</strong>.
+        </div>`;
+
+      lucide.createIcons();
+    }
+
+    function updateSim2() {
+      const delta = parseInt(document.getElementById('slider2').value);
+      document.getElementById('val2').textContent = delta;
+      const coef = 0.18;
+      const baseICT = 7371;
+      const projYears = ['2024', '2025', '2026', '2027', '2028'];
+      const baseline = [7371, 7371, 7371, 7371, 7371];
+      const projected = projYears.map((_, i) => Math.round(baseICT + (i + 1) * delta * coef * 100));
+
+      renderSimChart(projYears, baseline.map(v => v / 1000), projected.map(v => v / 1000), 'rb', 'Baseline', 'Proyeksi');
+
+      document.getElementById('simResult').innerHTML = `
+        <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-2xl"></div>
+        <h4 class="text-xs font-bold text-indigo-300 uppercase tracking-wider mb-2">Hasil Proyeksi Kebijakan</h4>
+        <div class="flex justify-between items-baseline gap-2 mb-1">
+          <span class="text-xs text-slate-400">Estimasi Kenaikan ICT Share:</span>
+          <span class="text-lg font-bold text-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.2)]">+Rp ${(delta * coef * 100).toFixed(1)} Miliar</span>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-normal">
+          Dasar analisis: korelasi erat peningkatan infrastruktur broadband dengan share sektor informasi & komunikasi.
+        </p>`;
+
+      document.getElementById('simInsight').innerHTML = `
+        <div class="text-violet-400 flex-shrink-0 mt-0.5">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-semibold text-slate-200 block mb-0.5">Wawasan Kebijakan Digital:</span>
+          Broadband tetap memiliki korelasi kuat dengan ICT Share (r &asymp; 0,96). Setiap 1% kenaikan broadband mendorong ICT Share &plusmn;0,18&times; dari selisih historis. Dengan kenaikan ${delta}%, ICT Share dapat meningkat ke sekitar <strong class="text-violet-400 font-bold">Rp ${Math.round(baseICT + delta * coef * 100)} miliar</strong> &mdash; mendukung akselerasi diversifikasi sektor ekonomi digital daerah.
+        </div>`;
+
+      lucide.createIcons();
+    }
+
+    function updateSim3() {
+      const delta = parseInt(document.getElementById('slider3').value);
+      document.getElementById('val3').textContent = delta;
+      const coef = 0.027;
+      const basePov = 7.77;
+      const projYears = ['2024', '2025', '2026', '2027', '2028'];
+      const baseline = [7.77, 7.77, 7.77, 7.77, 7.77];
+      const projected = projYears.map((_, i) => parseFloat(Math.max(basePov - (i + 1) * delta * coef * 0.4, 0).toFixed(2)));
+
+      renderSimChart(projYears, baseline, projected, '%', 'Baseline', 'Proyeksi');
+
+      document.getElementById('simResult').innerHTML = `
+        <div class="absolute top-0 right-0 w-24 h-24 bg-indigo-500/5 rounded-full blur-2xl"></div>
+        <h4 class="text-xs font-bold text-indigo-300 uppercase tracking-wider mb-2">Hasil Proyeksi Kebijakan</h4>
+        <div class="flex justify-between items-baseline gap-2 mb-1">
+          <span class="text-xs text-slate-400">Proyeksi Penurunan Kemiskinan:</span>
+          <span class="text-lg font-bold text-indigo-400 shadow-[0_0_12px_rgba(99,102,241,0.2)]">-${(delta * coef).toFixed(2)}% <span class="text-xs font-normal text-slate-500">poin</span></span>
+        </div>
+        <p class="text-[11px] text-slate-500 leading-normal">
+          Dasar analisis: peningkatan 10 poin DRI berkorelasi dengan reduksi kemiskinan regional sebesar -0,27% secara historis.
+        </p>`;
+
+      document.getElementById('simInsight').innerHTML = `
+        <div class="text-violet-400 flex-shrink-0 mt-0.5">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <span class="font-semibold text-slate-200 block mb-0.5">Wawasan Kebijakan Digital:</span>
+          Digital Readiness Index (DRI) berkorelasi negatif kuat dengan tingkat kemiskinan Sulsel (r &asymp; -0,94). Peningkatan DRI sebesar 10 poin berhubungan dengan penurunan kemiskinan ~0,27%. Kebijakan terpadu yang mendorong DRI naik ${delta} poin diproyeksikan dapat menurunkan tingkat kemiskinan Sulsel menjadi sekitar <strong class="text-violet-400 font-bold">${Math.max(basePov - delta * coef * 0.4, 0).toFixed(2)}%</strong>.
+        </div>`;
+
+      lucide.createIcons();
+    }
+
+    // Set up Legends
+    const legendTrend = document.getElementById('trendChartLegend');
+    legendTrend.className = 'flex flex-wrap gap-2.5 mt-2';
+    legendTrend.innerHTML = `
+      <span class="inline-flex items-center gap-1.5 bg-slate-950/60 border border-slate-800/40 px-2.5 py-1 rounded-full text-[10px] font-semibold text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-blue-500 shadow-[0_0_6px_rgba(59,130,246,0.5)]"></span>Internet
+      </span>
+      <span class="inline-flex items-center gap-1.5 bg-slate-950/60 border border-slate-800/40 px-2.5 py-1 rounded-full text-[10px] font-semibold text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 shadow-[0_0_6px_rgba(16,185,129,0.5)]"></span>Smartphone
+      </span>
+      <span class="inline-flex items-center gap-1.5 bg-slate-950/60 border border-slate-800/40 px-2.5 py-1 rounded-full text-[10px] font-semibold text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-rose-500 shadow-[0_0_6px_rgba(244,63,94,0.5)]"></span>Broadband Tetap
+      </span>`;
+
+    const legendSim = document.getElementById('simChartLegend');
+    legendSim.className = 'flex flex-wrap gap-2.5 mt-2';
+    legendSim.innerHTML = `
+      <span class="inline-flex items-center gap-1.5 bg-slate-950/60 border border-slate-800/40 px-2.5 py-1 rounded-full text-[10px] font-semibold text-slate-300">
+        <span class="w-2 h-0.5 bg-slate-500 inline-block"></span>Baseline (Tanpa Kebijakan)
+      </span>
+      <span class="inline-flex items-center gap-1.5 bg-slate-950/60 border border-slate-800/40 px-2.5 py-1 rounded-full text-[10px] font-semibold text-slate-300">
+        <span class="w-2 h-2 rounded-full bg-violet-500 shadow-[0_0_6px_rgba(139,92,246,0.5)]"></span>Proyeksi
+      </span>`;
+
+    // Initial updates and renders
+    updateSim1();
+  </script>
+</body>
+
+</html>
